@@ -30,8 +30,7 @@ namespace ejemploAPIEstructura.Services
             if (alumno == null)
                 throw new ArgumentNullException("El objeto alumno es requerido");
 
-            //if (alumno.Carnet == null)
-            //    throw new ArgumentNullException("El carnet es requerido.");
+        
 
             if (alumno.Name == null)
                 throw new Exception("Name is required");
@@ -48,8 +47,10 @@ namespace ejemploAPIEstructura.Services
             alumno.Carnet = $"{carnetAnio}-{cede}-{correlativo}";
 
 
+            alumno.IdUsuarioCreacion = 1;
+
             alumno.FechaCreacion = DateTime.Now;
-            alumno.FechaModificacion = null;
+            
 
             await _repository.AddASync(alumno);
 

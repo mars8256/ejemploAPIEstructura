@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ejemploAPIEstructura.Entities;
 using ejemploAPIEstructura.Entities.Dtos.Request;
+using ejemploAPIEstructura.Entities.Dtos.Response;
 using ejemploAPIEstructura.Entities.Interfaces.Service;
 using ejemploAPIEstructura.Entities.Mapper;
 using ejemploAPIEstructura.Services;
@@ -36,7 +37,9 @@ namespace ejemploAPIEstructura.Controllers
 
             var result = await _service.Insert(alumno);
 
-            return Ok(result);
+            var respponse = _mapper.Map<AlumnoResponseDto>(result);
+
+            return Ok(respponse);
 
           
         }

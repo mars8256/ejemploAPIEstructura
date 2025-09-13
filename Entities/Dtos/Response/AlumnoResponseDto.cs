@@ -2,15 +2,21 @@
 {
     public class AlumnoResponseDto
     {
-        //base
+        
         public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? SecondName { get; set; }
+        public string? Carnet { get; set; }
         public int IdUsuarioCreacion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public int IdUsuarioModificacion { get; set; }
         public DateTime FechaModificacion { get; set; }
 
-        //objeto
-        public string? Name { get; set; }
+        
+
+
+      
+      
 
     }
 }
