@@ -18,6 +18,16 @@ namespace ejemploAPIEstructura.Services
             throw new NotImplementedException();
         }
 
+        public List<Alumno> GetAll()
+        {
+            var alumnos = _repository.GetAllByFilter().ToList();
+
+            if (alumnos == null)
+                throw new Exception("Datos no encontrados");
+
+            return (List<Alumno>)alumnos;
+        }
+
         public Task<Alumno> GetById(int id)
         {
             throw new NotImplementedException();

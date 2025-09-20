@@ -12,7 +12,7 @@
         public int IdUsuarioModificacion { get; set; }
         public DateTime FechaModificacion { get; set; }
 
-        
+        public UsuarioResponseDto? UsuarioCreacion { get; set; }
 
 
       

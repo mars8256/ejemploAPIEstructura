@@ -8,6 +8,8 @@ namespace ejemploAPIEstructura.Entities
         public string? Name { get; set; }
         public string? SecondName { get; set; }
         public string? Carnet {  get; set; }
-        //public List<Curso>? CursosActuales { get; set; }
+        
+        [ForeignKey("IdUsuarioCreacion")]
+        public Usuario? UsuarioCreacion { get; set; }
     }
 }

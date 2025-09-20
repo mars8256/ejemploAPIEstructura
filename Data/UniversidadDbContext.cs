@@ -12,6 +12,6 @@ namespace ejemploAPIEstructura.Data
 
         DbSet<Alumno> alumnos { get; set; }
 
-
+        DbSet<Usuario> usuarios { get; set; }
     }
 }

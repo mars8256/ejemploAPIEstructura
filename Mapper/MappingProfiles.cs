@@ -12,6 +12,8 @@ namespace ejemploAPIEstructura.Mapper
             CreateMap<Alumno, AlumnoRequestDto>().ReverseMap();
             CreateMap<Alumno, AlumnoResponseDto>().ReverseMap();
 
+            CreateMap<Usuario, UsuarioRequestDto>().ReverseMap();
+            CreateMap<Usuario, UsuarioResponseDto>().ReverseMap();
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using ejemploAPIEstructura.Entities;
 using ejemploAPIEstructura.Entities.Interfaces.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace ejemploAPIEstructura.Data.Repositoy
 {
@@ -13,7 +14,9 @@ namespace ejemploAPIEstructura.Data.Repositoy
 
         public IQueryable<Alumno> GetAllByFilter()
         {
-            return _entities.AsQueryable();
+            return _entities
+                .Include(a => a.UsuarioCreacion)
+                .AsQueryable();
         }
     }
 }

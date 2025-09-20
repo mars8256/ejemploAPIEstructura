@@ -5,11 +5,14 @@ using ejemploAPIEstructura.Entities.Dtos.Response;
 using ejemploAPIEstructura.Entities.Interfaces.Service;
 using ejemploAPIEstructura.Entities.Mapper;
 using ejemploAPIEstructura.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ejemploAPIEstructura.Controllers
 {
+    //[Authorize]
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class AlumnoController : ControllerBase
@@ -24,9 +27,11 @@ namespace ejemploAPIEstructura.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<IActionResult> Get() 
-        { 
-            return new List<IActionResult>();
+        public IActionResult Get()
+        {
+            var result = _service.GetAll();
+            var resultDto = _mapper.Map<IEnumerable<AlumnoResponseDto>>(result);
+            return Ok(resultDto);
         }
 
         [HttpPost]
